@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrollable Div with Buttons</title>
+  <style>
+    /* Container for the scroll area */
+    .scroll-container {
+      width: 300px;
+      height: 200px;
+      overflow-y: scroll;
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin: 10px auto;
+    }
+
+    /* Style for buttons */
+    .scroll-button {
+      text-align: center; 
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .scroll-button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+    /* Content inside the scroll area */
+    .scroll-content {
+      height: 400px; /* More content to allow scrolling */
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll up button -->
+  <button class="scroll-button" onclick="scrollContent(-20)"> Up</button>
+
+  <!-- Scroll container with content -->
+  <div class="scroll-container" id="scrollArea">
+    <div class="scroll-content">
+      <!-- Sample content -->
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <p>Phasellus iaculis libero ut bibendum ullamcorper.</p>
+      <p>Nullam auctor purus ac nisi venenatis, at fermentum ipsum bibendum.</p>
+      <p>Integer fermentum odio nec sapien bibendum, at dictum massa luctus.</p>
+      <p>Duis placerat eros sit amet nisl faucibus, a sollicitudin erat volutpat.</p>
+      <p>Ut laoreet sapien non urna aliquet, vitae fringilla lorem vestibulum.</p>
+    </div>
+  </div>
+
+  <!-- Scroll down button -->
+  <button class="scroll-button" onclick="scrollContent(20)"> Down</button>
+
+  <script>
+    // Function to scroll content
+    function scrollContent(amount) {
+      const scrollArea = document.getElementById('scrollArea');
+      scrollArea.scrollTop += amount;
+    }
+  </script>
+
+</body>
+</html>
